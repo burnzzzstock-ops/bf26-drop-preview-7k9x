@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>slopcannon — Black Friday 2026 Private Preview</title>
+  <meta property="og:title" content="slopcannon — Black Friday 2026 Drop Preview" />
+  <meta property="og:description" content="Private Slop HQ preview · 65-SKU Black Friday 2026 collection, interactive Sloppy Six Pack collector box &amp; colorway proofs." />
+  <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0739/0806/0262/files/00_studio_jh18_model_front_v47.jpg?v=1795415494" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="bf26-theme.css?v=56" />
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a class="brand" href="#catalog" onclick="setCollection('all')">
+      <svg width="26" height="20" viewBox="110 28 780 592"><path d="M 110 280 C 110 215 148 168 225 150 L 190 28 L 382 150 L 618 150 L 810 28 L 775 150 C 852 168 890 215 890 280 L 890 425 C 890 548 796 620 650 620 L 350 620 C 204 620 110 548 110 425 Z M 338 300 C 338 270 362 246 392 246 L 418 246 C 448 246 472 270 472 300 L 472 438 C 472 468 448 492 418 492 L 392 492 C 362 492 338 468 338 438 Z M 528 300 C 528 270 552 246 582 246 L 608 246 C 638 246 662 270 662 300 L 662 438 C 662 468 638 492 608 492 L 582 492 C 552 492 528 468 528 438 Z" fill="#b6ff38" fill-rule="evenodd"/></svg>
+      <span class="brand-word">slopcannon</span>
+      <span class="brand-tag">shop</span>
+    </a>
+
+    <nav class="nav-links">
+      <button class="nav-link active" data-coll="all">All</button>
+      <button class="nav-link" data-coll="outerwear">Hoodies &amp; suits</button>
+      <button class="nav-link" data-coll="knits">Knits &amp; bottoms</button>
+      <button class="nav-link" data-coll="snout">Tees &amp; tops</button>
+      <button class="nav-link" data-coll="footwear">Footwear</button>
+      <button class="nav-link" data-coll="accessories">Stickers, keys &amp; socks</button>
+      <button class="nav-link" data-coll="bundles">Tracksuit sets</button>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="owner-toggle" id="ownerToggle">Owner specs</button>
+      <button class="btn-lime" id="cartBtn"><span>Bag</span><span class="cart-count" id="cartCount">0</span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-left">
+    <h1>Get in the cannon.</h1>
+    <p>Heavyweight knits, cut-and-sew fleece &amp; late-night broadcast gear. <strong>Free US shipping $150+</strong> &middot; <strong>Free sticker pack $200+</strong>.</p>
+  </div>
+  <div class="hero-pill">
+    <img id="heroThumb" src="https://cdn.shopify.com/s/files/1/0739/0806/0262/files/00_studio_jh18_model_front_v47.jpg?v=1795415494" alt="Drop Hero" />
+    <div class="hero-pill-copy">
+      Black Friday drop
+      <span id="heroCountMeta">49 pieces &middot; zero filler</span>
+    </div>
+    <button class="btn-lime" onclick="setCollection('bundles')">Shop sets</button>
+  </div>
+</section>
+
+<div class="toolbar-wrap" id="catalog">
+  <div class="toolbar">
+    <div class="filter-tabs" id="filterTabs">
+      <button class="tab active" data-coll="all">All</button>
+      <button class="tab bundle-tab" data-coll="bundles">Tracksuit sets (2)</button>
+      <button class="tab" data-coll="outerwear">Hoodies &amp; suits</button>
+      <button class="tab" data-coll="knits">Knits &amp; bottoms</button>
+      <button class="tab" data-coll="snout">Snout capsule</button>
+      <button class="tab" data-coll="broadcast">Late Night TV</button>
+      <button class="tab" data-coll="footwear">Footwear</button>
+      <button class="tab" data-coll="accessories">Stickers, keys &amp; socks</button>
+      <button class="tab" data-coll="carryovers">Originals</button>
+    </div>
+    <div class="search-sort">
+      <input class="search-input" id="searchInput" type="search" placeholder="Search..." />
+      <select class="sort-select" id="sortSelect">
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: Low to high</option>
+        <option value="price-desc">Price: High to low</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="bundle-showcase" id="bundleShowcase"></div>
+  <div class="grid" id="productGrid"></div>
+</main>
+
+<section class="trust-strip">
+  <div class="trust-col">
+    <div class="num">01</div>
+    <h3>Free US shipping $150+</h3>
+    <p>Pass $150 and we cover US shipping. Hit $200 and unlock a free slop.cc Tech Sticker Pack.</p>
+  </div>
+  <div class="trust-col">
+    <div class="num">02</div>
+    <h3>Actually heavy fabric</h3>
+    <p>Real 4-yarn jacquard knits, 10 oz fleece &amp; heavy canvas. Only the name is slop.</p>
+  </div>
+  <div class="trust-col">
+    <div class="num">03</div>
+    <h3>30-day size swaps</h3>
+    <p>Exact garment size charts inside every piece. Ordered too snug after Thanksgiving? Easy exchange.</p>
+  </div>
+</section>
+
+<section class="droplist-section">
+  <div class="droplist-copy">
+    <div class="droplist-kicker">Vault &amp; restock wire</div>
+    <h2>Get pinged before the next drop.</h2>
+    <p>Early access links, knitwear restocks, zero corporate slop. Unsubscribe in one click.</p>
+  </div>
+  <form class="droplist-form" id="dropListForm">
+    <input class="droplist-input" id="dropListInput" type="email" required placeholder="you@slop.cc" />
+    <button class="btn-lime" type="submit" style="height:42px; padding:0 22px;">Join drop list</button>
+  </form>
+</section>
+
+<!-- Product Detail Modal -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div class="modal-gallery" id="modalGallery">
+      <div class="modal-main-wrap">
+        <span class="modal-img-label" id="modalImgLabel"></span>
+        <img id="modalMainImg" src="" alt="" />
+        <div class="live-box-stage" id="liveBoxStage">
+          <img class="live-box-bg" id="liveBoxBg" src="" alt="The Sloppy Six Pack Collector Box" />
+          <div class="live-box-tray" id="liveBoxTray"></div>
+        </div>
+      </div>
+      <div class="modal-thumbs" id="modalThumbs"></div>
+    </div>
+    <div class="modal-info">
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-price-row">
+        <div class="modal-price" id="modalPrice"></div>
+        <span class="modal-fit-badge" id="modalFitBadge"></span>
+      </div>
+      <div class="owner-strip" id="modalOwnerStrip"></div>
+
+      <div class="modal-color-block" id="modalColorBlock">
+        <div class="modal-color-head">Color: <strong id="modalColorName"></strong></div>
+        <div class="modal-swatches" id="modalSwatches"></div>
+      </div>
+
+      <div>
+        <div class="size-head-row">
+          <span class="size-label">Select size</span>
+          <button class="size-guide-btn" id="sizeGuideBtn" type="button">Size &amp; fit chart</button>
+        </div>
+        <div class="model-note" id="modalModelNote"></div>
+        <div class="size-chart-box" id="sizeChartBox"></div>
+        <div class="sizes" id="modalSizes"></div>
+      </div>
+
+      <div id="modalBuilderContainer"></div>
+
+      <button class="btn-lime btn-lime-lg" id="modalAddBtn" style="width:100%;">Add to bag</button>
+
+      <!-- 1-Click Tracksuit Set Builder (renders automatically on TS07, SLOP-12, TS10-TOP, TS10-BOT) -->
+      <div id="modalSuitContainer"></div>
+
+      <p id="modalDesc" style="font-size:13.5px; color:var(--muted); line-height:1.55;"></p>
+      <div class="care-spec" id="modalCareSpec"></div>
+      <div class="upsell-box" id="modalUpsells"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Upgraded High-AOV Slide-Out Bag Drawer -->
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside class="drawer" id="cartDrawer">
+  <div class="drawer-head">
+    <h3>Your bag</h3>
+    <button class="modal-close" style="position:static;" id="drawerClose">&times;</button>
+  </div>
+  <div class="ship-bar">
+    <div id="shipMsg">Add $150 for free US shipping</div>
+    <div class="ship-track-wrap">
+      <div class="ship-track"><div class="ship-fill" id="shipFill"></div></div>
+      <div class="tier-stop" id="stopShip" style="left: 75%;">
+        <div class="tier-dot"></div>
+        <div class="tier-lbl">$150 Free Ship</div>
+      </div>
+      <div class="tier-stop" id="stopGift" style="left: 96%;">
+        <div class="tier-dot"></div>
+        <div class="tier-lbl">$200 Free Pack</div>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-items" id="cartItems"></div>
+  <div class="bag-upsells" id="bagUpsells"></div>
+  <div class="drawer-foot">
+    <div class="savings-row" id="cartSavingsRow">
+      <span id="cartSavingsLabel">Tracksuit set discount</span>
+      <span id="cartSavingsVal">-$0.00</span>
+    </div>
+    <div class="foot-row"><span>Total</span><span id="cartSubtotal">$0.00</span></div>
+    <button class="btn-lime btn-lime-lg" id="checkoutBtn" style="width:100%;" onclick="goToCheckout()">Checkout</button>
+    <div class="wallet-row">
+      <button class="wallet-pill shop-pay" onclick="goToCheckout('Shop Pay')">Shop Pay</button>
+      <button class="wallet-pill" onclick="goToCheckout('Apple Pay')">&#63743; Pay</button>
+      <button class="wallet-pill" onclick="goToCheckout('Google Pay')">G Pay</button>
+    </div>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<footer>
+  <a class="brand" href="#catalog" onclick="setCollection('all')">
+    <svg width="22" height="17" viewBox="110 28 780 592"><path d="M 110 280 C 110 215 148 168 225 150 L 190 28 L 382 150 L 618 150 L 810 28 L 775 150 C 852 168 890 215 890 280 L 890 425 C 890 548 796 620 650 620 L 350 620 C 204 620 110 548 110 425 Z M 338 300 C 338 270 362 246 392 246 L 418 246 C 448 246 472 270 472 300 L 472 438 C 472 468 448 492 418 492 L 392 492 C 362 492 338 468 338 438 Z M 528 300 C 528 270 552 246 582 246 L 608 246 C 638 246 662 270 662 300 L 662 438 C 662 468 638 492 608 492 L 582 492 C 552 492 528 468 528 438 Z" fill="#b6ff38" fill-rule="evenodd"/></svg>
+    <span class="brand-word" style="font-size:17px;">slopcannon</span>
+  </a>
+  <span>&copy; 2026 SLOP, LLC &middot; Free US shipping $150+ &middot; <a href="https://slop.cc" target="_blank" style="color:var(--accent); text-decoration:none;">slop.cc &#8599;</a></span>
+</footer>
+  <script>window.BF26_CATALOG_URL = 'bf26-catalog.json?v=56';</script>
+  <script src="bf26-app.js?v=56" defer></script>
+</body>
+</html>
